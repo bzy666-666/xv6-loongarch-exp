@@ -8,6 +8,7 @@
 
 ```bash
 git clone https://github.com/LoongsonLab/xv6-loongarch-exp.git
+git checkout -b qemu-9.2
 ```
 
 2、安装qemu-9.2或以上
