@@ -122,7 +122,7 @@ usertrapret(void)
   w_csr_era(p->trapframe->era);
 
   // tell uservec.S the user page table to switch to.
-  volatile uint64 pgdl = (uint64)(p->pagetable);
+  volatile uint64 pgdl = (uint64)(p->pagetable) & 0xFFFFFFFFUL;
 
   // jump to uservec.S at the top of memory, which 
   // switches to the user page table, restores user registers,

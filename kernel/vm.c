@@ -23,7 +23,7 @@ vminit(void)//todo
   kpgtbl = (pagetable_t) kalloc();
   memset(kpgtbl, 0, PGSIZE);
   proc_mapstacks(kpgtbl);
-
+  kpgtbl = (pagetable_t)((uint64)kpgtbl & 0xFFFFFFFFUL);
   w_csr_pgdl((uint64)kpgtbl);
   tlbinit();
 
